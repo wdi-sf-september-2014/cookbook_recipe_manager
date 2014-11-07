@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Recipe CookBook</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+
+	<link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
+
+	<style>
+		.bold {
+			font-weight:bold;
+		}
+
+		.margin-top-20 {
+			margin-top:20px;
+		}
+
+		.small-container {
+			width:700px;
+			margin-left:auto;
+			margin-right:auto;
+		}
+
+		.txt-right {
+			text-align:right;
+		}
+		body {
+			background-color: #FFFFF5;
+		}
+		h1 {
+			margin-bottom: 20px;
+			font-family:'Shadows Into Light', cursive;
+			font-size: 50px;
+		}
+		.tablewording {
+			font-family: 'Rokkitt', serif;
+			font-size: 18px;
+		}
+		.buttoncolor {
+			background: #A37547 !important;
+		}
+	</style>
+</head>
+
+<body>
+
+<div class="small-container">
+	<h1>My CookBook</h1>
+
+	<div>
+		<a href="/" class="btn btn-primary tablewording buttoncolor">Back</a>
+	</div>
+</div>
+
+<%= form_tag do %>
+	<div class="small-container margin-top-20">
+		<div class="well tablewording">
+			<div class="bold">
+				Title
+			</div>
+			<div class="margin-top-20">
+				<input type="text" class="form-control" name="name" value="<%= @recipe.name %>"/>
+			</div>
+			<div class="bold margin-top-20">
+				Ingredients
+			</div>
+			<div class="margin-top-20">
+				<input type="text" class="form-control" name="ingredients" value="<%= @recipe.ingredients %>"/>
+			</div>
+			<div class="bold margin-top-20">
+				Cooking Time
+			</div>
+			<div class="margin-top-20">
+				<input type="text" class="form-control" name="cooking_time" value="<%= @recipe.cooking_time %>"/>
+			</div>
+			<div class="bold margin-top-20">
+				Prep Time
+			</div>
+			<div class="margin-top-20">
+				<input type="text" class="form-control" name="prep_time" value="<%= @recipe.prep_time %>"/>
+			</div>
+			<div class="bold margin-top-20">
+				Directions
+			</div>
+			<div class="margin-top-20">
+				<input type="text" class="form-control" name="directions" value="<%= @recipe.directions%>"/>
+			</div>
+			<div class="margin-top-20 txt-right">
+				<button type="submit" name="delete_button" class="btn btn-default">Delete Recipe</button>
+				<button type="submit" class="btn btn-primary buttoncolor">Edit Recipe</button>
+			</div>
+		</div>
+	</div>
+<% end %>
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
